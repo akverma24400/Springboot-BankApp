@@ -6,8 +6,8 @@ pipeline{
     stages{
         stage("Code"){
             steps{
-                clone("https://github.com/Amitabh-DevOps/banking-app-project.git","dev")
-                echo "Code clonning done."
+                clone("https://github.com/akverma24400/Springboot-BankApp.git","dev")
+                echo "Code cloning done."
             }
         }
         stage("Build"){                                                             
@@ -19,7 +19,7 @@ pipeline{
         stage("Push to DockerHub"){
             steps{
                 dockerpush("dockerHub","bankapp-mini","latest")
-                echo "Push to dockerHub is also done."
+                echo "Push to DockerHub is also done."
             }
         }
         stage("Deplying"){
